@@ -1,4 +1,24 @@
 :root {
+  --display-128: 8rem;
+  --display-128--line-height: 1;
+  --display-128--letter-spacing: -0.05em;
+  --display-128--font-weight: 600;
+
+  --display-96: 6rem;
+  --display-96--line-height: 1;
+  --display-96--letter-spacing: -0.05em;
+  --display-96--font-weight: 600;
+
+  --display-84: 5.25rem;
+  --display-84--line-height: 1;
+  --display-84--letter-spacing: -0.05em;
+  --display-84--font-weight: 600;
+
+  --display-80: 5rem;
+  --display-80--line-height: 1;
+  --display-80--letter-spacing: -0.05em;
+  --display-80--font-weight: 600;
+
   --heading-72: 4.5rem;
   --heading-72--line-height: 1;
   --heading-72--letter-spacing: -0.05em;

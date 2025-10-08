@@ -1,6 +1,8 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 @import "../styles/variables/aspect-ratio.css";
 @import "../styles/variables/color.css";
+@import "../styles/variables/typography.css";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
@@ -120,6 +122,124 @@
   --aspect-medium-vertical: var(--medium-vertical);
   --aspect-panoramic-vertical: var(--panoramic-vertical);
   --aspect-anamorphic-vertical: var(--anamorphic-vertical);
+
+  --text-display-128: var(--display-128);
+  --text-display-128--line-height: var(--display-128--line-height);
+  --text-display-128--letter-spacing: var(--display-128--letter-spacing);
+  --text-display-128--font-weight: var(--display-128--font-weight);
+
+  --text-display-96: var(--display-96);
+  --text-display-96--line-height: var(--display-96--line-height);
+  --text-display-96--letter-spacing: var(--display-96--letter-spacing);
+  --text-display-96--font-weight: var(--display-96--font-weight);
+
+  --text-display-84: var(--display-84);
+  --text-display-84--line-height: var(--display-84--line-height);
+  --text-display-84--letter-spacing: var(--display-84--letter-spacing);
+  --text-display-84--font-weight: var(--display-84--font-weight);
+
+  --text-display-80: var(--display-80);
+  --text-display-80--line-height: var(--display-80--line-height);
+  --text-display-80--letter-spacing: var(--display-80--letter-spacing);
+  --text-display-80--font-weight: var(--display-80--font-weight);
+
+  --text-heading-72: var(--heading-72);
+  --text-heading-72--line-height: var(--heading-72--line-height);
+  --text-heading-72--letter-spacing: var(--heading-72--letter-spacing);
+  --text-heading-72--font-weight: var(--heading-72--font-weight);
+
+  --text-heading-64: var(--heading-64);
+  --text-heading-64--line-height: var(--heading-64--line-height);
+  --text-heading-64--letter-spacing: var(--heading-64--letter-spacing);
+  --text-heading-64--font-weight: var(--heading-64--font-weight);
+
+  --text-heading-56: var(--heading-56);
+  --text-heading-56--line-height: var(--heading-56--line-height);
+  --text-heading-56--letter-spacing: var(--heading-56--letter-spacing);
+  --text-heading-56--font-weight: var(--heading-56--font-weight);
+
+  --text-heading-48: var(--heading-48);
+  --text-heading-48--line-height: var(--heading-48--line-height);
+  --text-heading-48--letter-spacing: var(--heading-48--letter-spacing);
+  --text-heading-48--font-weight: var(--heading-48--font-weight);
+
+  --text-heading-40: var(--heading-40);
+  --text-heading-40--line-height: var(--heading-40--line-height);
+  --text-heading-40--letter-spacing: var(--heading-40--letter-spacing);
+  --text-heading-40--font-weight: var(--heading-40--font-weight);
+
+  --text-heading-32: var(--heading-32);
+  --text-heading-32--line-height: var(--heading-32--line-height);
+  --text-heading-32--letter-spacing: var(--heading-32--letter-spacing);
+  --text-heading-32--font-weight: var(--heading-32--font-weight);
+
+  --text-heading-24: var(--heading-24);
+  --text-heading-24--line-height: var(--heading-24--line-height);
+  --text-heading-24--letter-spacing: var(--heading-24--letter-spacing);
+  --text-heading-24--font-weight: var(--heading-24--font-weight);
+
+  --text-heading-20: var(--heading-20);
+  --text-heading-20--line-height: var(--heading-20--line-height);
+  --text-heading-20--letter-spacing: var(--heading-20--letter-spacing);
+  --text-heading-20--font-weight: var(--heading-20--font-weight);
+
+  --text-heading-16: var(--heading-16);
+  --text-heading-16--line-height: var(--heading-16--line-height);
+  --text-heading-16--letter-spacing: var(--heading-16--letter-spacing);
+  --text-heading-16--font-weight: var(--heading-16--font-weight);
+
+  --text-heading-14: var(--heading-14);
+  --text-heading-14--line-height: var(--heading-14--line-height);
+  --text-heading-14--letter-spacing: var(--heading-14--letter-spacing);
+  --text-heading-14--font-weight: var(--heading-14--font-weight);
+
+  --text-label-20: var(--label-20);
+  --text-label-20--line-height: var(--label-20--line-height);
+  --text-label-20--font-weight: var(--label-20--font-weight);
+
+  --text-label-18: var(--label-18);
+  --text-label-18--line-height: var(--label-18--line-height);
+  --text-label-18--font-weight: var(--label-18--font-weight);
+
+  --text-label-16: var(--label-16);
+  --text-label-16--line-height: var(--label-16--line-height);
+  --text-label-16--font-weight: var(--label-16--font-weight);
+
+  --text-label-14: var(--label-14);
+  --text-label-14--line-height: var(--label-14--line-height);
+  --text-label-14--font-weight: var(--label-14--font-weight);
+
+  --text-label-13: var(--label-13);
+  --text-label-13--line-height: var(--label-13--line-height);
+  --text-label-13--font-weight: var(--label-13--font-weight);
+
+  --text-label-12: var(--label-12);
+  --text-label-12--line-height: var(--label-12--line-height);
+  --text-label-12--font-weight: var(--label-12--font-weight);
+
+  --text-copy-24: var(--copy-24);
+  --text-copy-24--line-height: var(--copy-24--line-height);
+  --text-copy-24--font-weight: var(--copy-24--font-weight);
+
+  --text-copy-20: var(--copy-20);
+  --text-copy-20--line-height: var(--copy-20--line-height);
+  --text-copy-20--font-weight: var(--copy-20--font-weight);
+
+  --text-copy-18: var(--copy-18);
+  --text-copy-18--line-height: var(--copy-18--line-height);
+  --text-copy-18--font-weight: var(--copy-18--font-weight);
+
+  --text-copy-16: var(--copy-16);
+  --text-copy-16--line-height: var(--copy-16--line-height);
+  --text-copy-16--font-weight: var(--copy-16--font-weight);
+
+  --text-copy-14: var(--copy-14);
+  --text-copy-14--line-height: var(--copy-14--line-height);
+  --text-copy-14--font-weight: var(--copy-14--font-weight);
+
+  --text-copy-13: var(--copy-13);
+  --text-copy-13--line-height: var(--copy-13--line-height);
+  --text-copy-13--font-weight: var(--copy-13--font-weight);
 }
 
 @theme inline {
