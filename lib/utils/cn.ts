@@ -1,7 +1,10 @@
-import type { ClassValue } from "clsx";
-import { clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { extendTailwindMerge } from "tailwind-merge";
+import { fontSize } from "@/lib/utils/extend-tailwind-variable";
 
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
+export const cn = extendTailwindMerge({
+  extend: {
+    theme: {
+      text: Object.values(fontSize).flat(),
+    },
+  },
+});
