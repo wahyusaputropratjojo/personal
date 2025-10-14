@@ -5,7 +5,7 @@
       "source": {
         "organizeImports": "on",
         "useSortedAttributes": "on",
-        "useSortedKeys": "on",
+        "useSortedKeys": "off",
         "useSortedProperties": "on"
       }
     }
@@ -18,6 +18,19 @@
   "json": {
     "assist": {
       "enabled": true
+    }
+  },
+  "linter": {
+    "rules": {
+      "nursery": {
+        "useSortedClasses": {
+          "level": "error",
+          "options": {
+            "attributes": ["classList"],
+            "functions": ["clsx", "cva", "tv", "variant"]
+          }
+        }
+      }
     }
   },
   "vcs": {
