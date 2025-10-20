@@ -9,7 +9,7 @@ import type { VariantProps } from "tailwind-variants";
 import { variant } from "@/lib/utils/tailwind";
 
 const buttonVariants = variant({
-  base: "relative isolate inline-flex cursor-pointer select-none items-center justify-center transition-all focus:outline-gray-400 focus-visible:outline-4 [&_svg]:shrink-0",
+  base: "relative isolate inline-flex shrink-0 cursor-pointer pending:cursor-not-allowed select-none items-center justify-center border-1 outline-0 outline-transparent outline-offset-2 pending:brightness-50 transition-all focus-visible:z-10 focus-visible:outline-3 focus-visible:outline-gray-1000 disabled:cursor-not-allowed disabled:brightness-50 [&_svg]:shrink-0",
   variants: {
     fontSize: {
       small: "text-button-12",
@@ -18,12 +18,15 @@ const buttonVariants = variant({
     },
     intent: {
       primary:
-        "bg-gray-1000 text-gray-100 hover:bg-gray-900 disabled:bg-red-500",
-      secondary: "bg-gray-100 text-gray-1000 hover:bg-gray-200",
-      plain: "bg-transparent hover:bg-gray-100",
-      outline: "border-1 border-gray-400 bg-gray-100 hover:bg-gray-200",
-      warning: "bg-amber-800 text-gray-100 hover:bg-amber-700",
-      danger: "bg-red-800 text-gray-1000 hover:bg-red-700",
+        "border-gray-900 pressed:border-gray-700 bg-gray-1000 pressed:bg-gray-900 text-gray-100 hover:border-gray-700 hover:bg-gray-900",
+      secondary:
+        "border-gray-400 pressed:border-gray-500 bg-gray-100 pressed:bg-gray-200 text-gray-1000 hover:border-gray-500 hover:bg-gray-200",
+      tertiary:
+        "border-transparent pressed:border-gray-500 bg-transparent pressed:bg-gray-300 hover:border-gray-500 hover:bg-gray-200",
+      warning:
+        "border-amber-400 pressed:border-amber-500 bg-amber-800 pressed:bg-amber-700 text-gray-100 hover:border-amber-500 hover:bg-amber-700",
+      danger:
+        "border-red-400 pressed:border-red-500 bg-red-800 pressed:bg-red-700 text-gray-1000 hover:border-red-500 hover:bg-red-700",
     },
     size: {
       small: "min-h-8 gap-x-1 px-4 has-[>svg]:px-2",
@@ -36,12 +39,6 @@ const buttonVariants = variant({
     shape: {
       square: "rounded-md",
       circle: "rounded-full",
-    },
-    isPending: {
-      true: "cursor-not-allowed opacity-50",
-    },
-    isDisabled: {
-      true: "cursor-not-allowed opacity-50",
     },
   },
   compoundVariants: [
@@ -72,66 +69,6 @@ const buttonVariants = variant({
       icon: true,
       size: "large",
     },
-    {
-      className: "hover:bg-gray-1000",
-      isPending: true,
-      intent: "primary",
-    },
-    {
-      className: "hover:bg-gray-100",
-      isPending: true,
-      intent: "secondary",
-    },
-    {
-      className: "hover:bg-transparent",
-      isPending: true,
-      intent: "plain",
-    },
-    {
-      className: "hover:bg-gray-100",
-      isPending: true,
-      intent: "outline",
-    },
-    {
-      className: "hover:bg-amber-800",
-      isPending: true,
-      intent: "warning",
-    },
-    {
-      className: "hover:bg-red-800",
-      isPending: true,
-      intent: "danger",
-    },
-    {
-      className: "hover:bg-gray-1000",
-      isDisabled: true,
-      intent: "primary",
-    },
-    {
-      className: "hover:bg-gray-100",
-      isDisabled: true,
-      intent: "secondary",
-    },
-    {
-      className: "hover:bg-transparent",
-      isDisabled: true,
-      intent: "plain",
-    },
-    {
-      className: "hover:bg-gray-100",
-      isDisabled: true,
-      intent: "outline",
-    },
-    {
-      className: "hover:bg-amber-800",
-      isDisabled: true,
-      intent: "warning",
-    },
-    {
-      className: "hover:bg-red-800",
-      isDisabled: true,
-      intent: "danger",
-    },
   ],
   defaultVariants: {
     intent: "primary",
@@ -152,8 +89,6 @@ export function Button({
   size,
   icon,
   shape,
-  isPending,
-  isDisabled,
   ref,
   ...props
 }: ButtonProps) {
@@ -165,8 +100,6 @@ export function Button({
         intent,
         icon,
         shape,
-        isPending,
-        isDisabled,
       })}
       ref={ref}
       {...props}
