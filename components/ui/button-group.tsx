@@ -1,4 +1,7 @@
+"use client";
+
 import type { ComponentProps } from "react";
+import { ButtonContext } from "react-aria-components";
 import type { VariantProps } from "tailwind-variants";
 import { variant } from "@/lib/utils/tailwind";
 
@@ -7,9 +10,9 @@ const buttonGroupVariants = variant({
   variants: {
     orientation: {
       horizontal:
-        "[&>*:not(:first-child)]:rounded-l-none [&>*:not(:first-child)]:border-l-0 [&>*:not(:last-child)]:rounded-r-none",
+        "[&>*:not(:first-child)]:-ml-px [&>*:not(:first-child)]:rounded-l-none [&>*:not(:last-child)]:rounded-r-none",
       vertical:
-        "flex-col [&>*:not(:first-child)]:rounded-t-none [&>*:not(:first-child)]:border-t-0 [&>*:not(:last-child)]:rounded-b-none",
+        "[&>*:not(:first-child)]:-mt-px flex-col [&>*:not(:first-child)]:rounded-t-none [&>*:not(:last-child)]:rounded-b-none",
     },
   },
   defaultVariants: {
@@ -17,15 +20,24 @@ const buttonGroupVariants = variant({
   },
 });
 
-type ButtonGroupProps = ComponentProps<"div"> &
+type ButtonGroupProps = { isDisabled?: boolean } & ComponentProps<"div"> &
   VariantProps<typeof buttonGroupVariants>;
 
-export function ButtonGroup({ orientation, ...props }: ButtonGroupProps) {
+export function ButtonGroup({
+  isDisabled,
+  orientation,
+  children,
+  ...props
+}: ButtonGroupProps) {
   return (
     <div
       className={buttonGroupVariants({ orientation })}
       data-orientation={orientation}
       {...props}
-    />
+    >
+      <ButtonContext.Provider value={{ isDisabled }}>
+        {children}
+      </ButtonContext.Provider>
+    </div>
   );
 }
