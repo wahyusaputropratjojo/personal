@@ -1,14 +1,152 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "../styles/variables/aspect-ratio.css";
 @import "../styles/variables/color.css";
-@import "../styles/variables/typography.css";
+@plugin "tailwindcss-react-aria-components";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
+  --aspect-*: initial;
+  --aspect-square: 1 / 1;
+
+  --aspect-standard-horizontal: 4 / 3;
+  --aspect-standard-vertical: 3 / 4;
+
+  --aspect-wide-horizontal: 16 / 9;
+  --aspect-wide-vertical: 9 / 16;
+
+  --aspect-classic-horizontal: 3 / 2;
+  --aspect-classic-vertical: 2 / 3;
+
+  --aspect-medium-horizontal: 5 / 4;
+  --aspect-medium-vertical: 4 / 5;
+
+  --aspect-panoramic-horizontal: 2 / 1;
+  --aspect-panoramic-vertical: 1 / 2;
+
+  --aspect-anamorphic-horizontal: 21 / 9;
+  --aspect-anamorphic-vertical: 9 / 21;
+
+
   --color-*: initial;
 
+  --color-transparent: transparent;
+
+
+  --text-*: initial;
+
+  --text-heading-72: 4.5rem;
+  --text-heading-72--line-height: 1;
+  --text-heading-72--letter-spacing: -0.05em;
+  --text-heading-72--font-weight: 600;
+
+  --text-heading-64: 4rem;
+  --text-heading-64--line-height: 1;
+  --text-heading-64--letter-spacing: -0.05em;
+  --text-heading-64--font-weight: 600;
+
+  --text-heading-56: 3.5rem;
+  --text-heading-56--line-height: 1;
+  --text-heading-56--letter-spacing: -0.05em;
+  --text-heading-56--font-weight: 600;
+
+  --text-heading-48: 3rem;
+  --text-heading-48--line-height: 1.2;
+  --text-heading-48--letter-spacing: -0.05em;
+  --text-heading-48--font-weight: 600;
+
+  --text-heading-40: 2.5rem;
+  --text-heading-40--line-height: 1.2;
+  --text-heading-40--letter-spacing: -0.05em;
+  --text-heading-40--font-weight: 600;
+
+  --text-heading-32: 2rem;
+  --text-heading-32--line-height: 1.2;
+  --text-heading-32--letter-spacing: -0.05em;
+  --text-heading-32--font-weight: 600;
+
+  --text-heading-24: 1.5rem;
+  --text-heading-24--line-height: 1.3;
+  --text-heading-24--letter-spacing: -0.05em;
+  --text-heading-24--font-weight: 600;
+
+  --text-heading-20: 1.25rem;
+  --text-heading-20--line-height: 1.3;
+  --text-heading-20--letter-spacing: -0.05em;
+  --text-heading-20--font-weight: 600;
+
+  --text-heading-16: 1rem;
+  --text-heading-16--line-height: 1.4;
+  --text-heading-16--letter-spacing: -0.05em;
+  --text-heading-16--font-weight: 600;
+
+  --text-heading-14: 0.875rem;
+  --text-heading-14--line-height: 1.4;
+  --text-heading-14--letter-spacing: -0.05em;
+  --text-heading-14--font-weight: 600;
+
+  --text-button-16: 1rem;
+  --text-button-16--line-height: 1.2;
+  --text-button-16--font-weight: 500;
+
+  --text-button-14: 0.875rem;
+  --text-button-14--line-height: 1.3;
+  --text-button-14--font-weight: 500;
+
+  --text-button-12: 0.75rem;
+  --text-button-12--line-height: 1.4;
+  --text-button-12--font-weight: 500;
+
+  --text-label-20: 1.25rem;
+  --text-label-20--line-height: 1.3;
+  --text-label-20--font-weight: 400;
+
+  --text-label-18: 1.125rem;
+  --text-label-18--line-height: 1.3;
+  --text-label-18--font-weight: 400;
+
+  --text-label-16: 1rem;
+  --text-label-16--line-height: 1.3;
+  --text-label-16--font-weight: 400;
+
+  --text-label-14: 0.875rem;
+  --text-label-14--line-height: 1.4;
+  --text-label-14--font-weight: 400;
+
+  --text-label-13: 0.813rem;
+  --text-label-13--line-height: 1.4;
+  --text-label-13--font-weight: 400;
+
+  --text-label-12: 0.75rem;
+  --text-label-12--line-height: 1.4;
+  --text-label-12--font-weight: 400;
+
+  --text-paragraph-24: 1.5rem;
+  --text-paragraph-24--line-height: 1.4;
+  --text-paragraph-24--font-weight: 400;
+
+  --text-paragraph-20: 1.25rem;
+  --text-paragraph-20--line-height: 1.6;
+  --text-paragraph-20--font-weight: 400;
+
+  --text-paragraph-18: 1.125rem;
+  --text-paragraph-18--line-height: 1.6;
+  --text-paragraph-18--font-weight: 400;
+
+  --text-paragraph-16: 1rem;
+  --text-paragraph-16--line-height: 1.5;
+  --text-paragraph-16--font-weight: 400;
+
+  --text-paragraph-14: 0.875rem;
+  --text-paragraph-14--line-height: 1.4;
+  --text-paragraph-14--font-weight: 400;
+
+  --text-paragraph-13: 0.813rem;
+  --text-paragraph-13--line-height: 1.4;
+  --text-paragraph-13--font-weight: 400;
+}
+
+@theme inline {
   --color-gray-100: var(--gray-100);
   --color-gray-200: var(--gray-200);
   --color-gray-300: var(--gray-300);
@@ -103,163 +241,18 @@
   --color-dark: var(--dark);
   --color-light: var(--light);
 
-  --color-transparent: transparent;
-
-  --aspect-*: initial;
-
-  --aspect-square: var(--square);
-
-  --aspect-standard-horizontal: var(--standard-horizontal);
-  --aspect-wide-horizontal: var(--wide-horizontal);
-  --aspect-classic-horizontal: var(--classic-horizontal);
-  --aspect-medium-horizontal: var(--medium-horizontal);
-  --aspect-panoramic-horizontal: var(--panoramic-horizontal);
-  --aspect-anamorphic-horizontal: var(--anamorphic-horizontal);
-
-  --aspect-standard-vertical: var(--standard-vertical);
-  --aspect-wide-vertical: var(--wide-vertical);
-  --aspect-classic-vertical: var(--classic-vertical);
-  --aspect-medium-vertical: var(--medium-vertical);
-  --aspect-panoramic-vertical: var(--panoramic-vertical);
-  --aspect-anamorphic-vertical: var(--anamorphic-vertical);
-
-  --text-display-128: var(--display-128);
-  --text-display-128--line-height: var(--display-128--line-height);
-  --text-display-128--letter-spacing: var(--display-128--letter-spacing);
-  --text-display-128--font-weight: var(--display-128--font-weight);
-
-  --text-display-96: var(--display-96);
-  --text-display-96--line-height: var(--display-96--line-height);
-  --text-display-96--letter-spacing: var(--display-96--letter-spacing);
-  --text-display-96--font-weight: var(--display-96--font-weight);
-
-  --text-display-84: var(--display-84);
-  --text-display-84--line-height: var(--display-84--line-height);
-  --text-display-84--letter-spacing: var(--display-84--letter-spacing);
-  --text-display-84--font-weight: var(--display-84--font-weight);
-
-  --text-display-80: var(--display-80);
-  --text-display-80--line-height: var(--display-80--line-height);
-  --text-display-80--letter-spacing: var(--display-80--letter-spacing);
-  --text-display-80--font-weight: var(--display-80--font-weight);
-
-  --text-heading-72: var(--heading-72);
-  --text-heading-72--line-height: var(--heading-72--line-height);
-  --text-heading-72--letter-spacing: var(--heading-72--letter-spacing);
-  --text-heading-72--font-weight: var(--heading-72--font-weight);
-
-  --text-heading-64: var(--heading-64);
-  --text-heading-64--line-height: var(--heading-64--line-height);
-  --text-heading-64--letter-spacing: var(--heading-64--letter-spacing);
-  --text-heading-64--font-weight: var(--heading-64--font-weight);
-
-  --text-heading-56: var(--heading-56);
-  --text-heading-56--line-height: var(--heading-56--line-height);
-  --text-heading-56--letter-spacing: var(--heading-56--letter-spacing);
-  --text-heading-56--font-weight: var(--heading-56--font-weight);
-
-  --text-heading-48: var(--heading-48);
-  --text-heading-48--line-height: var(--heading-48--line-height);
-  --text-heading-48--letter-spacing: var(--heading-48--letter-spacing);
-  --text-heading-48--font-weight: var(--heading-48--font-weight);
-
-  --text-heading-40: var(--heading-40);
-  --text-heading-40--line-height: var(--heading-40--line-height);
-  --text-heading-40--letter-spacing: var(--heading-40--letter-spacing);
-  --text-heading-40--font-weight: var(--heading-40--font-weight);
-
-  --text-heading-32: var(--heading-32);
-  --text-heading-32--line-height: var(--heading-32--line-height);
-  --text-heading-32--letter-spacing: var(--heading-32--letter-spacing);
-  --text-heading-32--font-weight: var(--heading-32--font-weight);
-
-  --text-heading-24: var(--heading-24);
-  --text-heading-24--line-height: var(--heading-24--line-height);
-  --text-heading-24--letter-spacing: var(--heading-24--letter-spacing);
-  --text-heading-24--font-weight: var(--heading-24--font-weight);
-
-  --text-heading-20: var(--heading-20);
-  --text-heading-20--line-height: var(--heading-20--line-height);
-  --text-heading-20--letter-spacing: var(--heading-20--letter-spacing);
-  --text-heading-20--font-weight: var(--heading-20--font-weight);
-
-  --text-heading-16: var(--heading-16);
-  --text-heading-16--line-height: var(--heading-16--line-height);
-  --text-heading-16--letter-spacing: var(--heading-16--letter-spacing);
-  --text-heading-16--font-weight: var(--heading-16--font-weight);
-
-  --text-heading-14: var(--heading-14);
-  --text-heading-14--line-height: var(--heading-14--line-height);
-  --text-heading-14--letter-spacing: var(--heading-14--letter-spacing);
-  --text-heading-14--font-weight: var(--heading-14--font-weight);
-
-  --text-label-20: var(--label-20);
-  --text-label-20--line-height: var(--label-20--line-height);
-  --text-label-20--font-weight: var(--label-20--font-weight);
-
-  --text-label-18: var(--label-18);
-  --text-label-18--line-height: var(--label-18--line-height);
-  --text-label-18--font-weight: var(--label-18--font-weight);
-
-  --text-label-16: var(--label-16);
-  --text-label-16--line-height: var(--label-16--line-height);
-  --text-label-16--font-weight: var(--label-16--font-weight);
-
-  --text-label-14: var(--label-14);
-  --text-label-14--line-height: var(--label-14--line-height);
-  --text-label-14--font-weight: var(--label-14--font-weight);
-
-  --text-label-13: var(--label-13);
-  --text-label-13--line-height: var(--label-13--line-height);
-  --text-label-13--font-weight: var(--label-13--font-weight);
-
-  --text-label-12: var(--label-12);
-  --text-label-12--line-height: var(--label-12--line-height);
-  --text-label-12--font-weight: var(--label-12--font-weight);
-
-  --text-copy-24: var(--copy-24);
-  --text-copy-24--line-height: var(--copy-24--line-height);
-  --text-copy-24--font-weight: var(--copy-24--font-weight);
-
-  --text-copy-20: var(--copy-20);
-  --text-copy-20--line-height: var(--copy-20--line-height);
-  --text-copy-20--font-weight: var(--copy-20--font-weight);
-
-  --text-copy-18: var(--copy-18);
-  --text-copy-18--line-height: var(--copy-18--line-height);
-  --text-copy-18--font-weight: var(--copy-18--font-weight);
-
-  --text-copy-16: var(--copy-16);
-  --text-copy-16--line-height: var(--copy-16--line-height);
-  --text-copy-16--font-weight: var(--copy-16--font-weight);
-
-  --text-copy-14: var(--copy-14);
-  --text-copy-14--line-height: var(--copy-14--line-height);
-  --text-copy-14--font-weight: var(--copy-14--font-weight);
-
-  --text-copy-13: var(--copy-13);
-  --text-copy-13--line-height: var(--copy-13--line-height);
-  --text-copy-13--font-weight: var(--copy-13--font-weight);
-}
-
-@theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @layer base {
-  html {
-    font-family: var(--font-geist-sans);
-    scrollbar-gutter: stable;
-    color: var(--color-gray-1000);
-    background: var(--color-background-100);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
   ::-ms-reveal {
     display: none;
   }
+}
+
+@utility scrollbar-gutter-stable {
+  scrollbar-gutter: stable;
 }
 
 @utility scrollbar-hidden {
