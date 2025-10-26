@@ -7,6 +7,7 @@ const badgeVariants = variant({
   variants: {
     intent: {
       primary: "border-gray-900 bg-gray-1000 text-gray-100",
+      secondary: "border-gray-400 bg-gray-100 text-gray-1000",
     },
     shape: {
       square: "rounded-md",
