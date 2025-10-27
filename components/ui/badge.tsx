@@ -3,7 +3,7 @@ import type { VariantProps } from "tailwind-variants";
 import { variant } from "@/lib/utils/tailwind";
 
 const badgeVariants = variant({
-  base: "inline-flex items-center gap-x-1.5 border-1 px-2 py-0.5 text-button-12",
+  base: "inline-flex items-center border-1 px-1.5 py-0.5 text-label-12",
   variants: {
     intent: {
       primary: "border-gray-900 bg-gray-1000 text-gray-100",
