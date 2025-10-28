@@ -8,5 +8,11 @@ import {
 type LabelProps = Omit<LabelPrimitiveProps, "className">;
 
 export function Label({ ...props }: LabelProps) {
-  return <LabelPrimitive data-slot="label" {...props} />;
+  return (
+    <LabelPrimitive
+      className="text-gray-1000 text-label-14"
+      data-slot="label"
+      {...props}
+    />
+  );
 }
