@@ -1,27 +1,19 @@
 "use client";
 
-import { Switch as SwitchPrimitive } from "radix-ui";
-import type { ComponentProps } from "react";
-import { cn } from "@/lib/utils/cn";
+import type { SwitchProps as SwitchPrimitiveProps } from "react-aria-components";
+import { Switch as SwitchPrimitive } from "react-aria-components";
 
-type SwitchProps = ComponentProps<typeof SwitchPrimitive.Root>;
+type SwitchProps = Omit<SwitchPrimitiveProps, "className" | "children">;
 
-export function Switch({ className, ...props }: SwitchProps) {
+export function Switch({ ...props }: SwitchProps) {
   return (
-    <SwitchPrimitive.Root
-      className={cn(
-        "peer inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent shadow-xs outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input dark:data-[state=unchecked]:bg-input/80",
-        className
-      )}
-      data-slot="switch"
+    <SwitchPrimitive
+      className="group relative inline-flex cursor-pointer items-center gap-2 text-label-14 disabled:cursor-not-allowed disabled:brightness-50"
       {...props}
     >
-      <SwitchPrimitive.Thumb
-        className={cn(
-          "pointer-events-none block size-4 rounded-full bg-background ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0 dark:data-[state=checked]:bg-primary-foreground dark:data-[state=unchecked]:bg-foreground"
-        )}
-        data-slot="switch-thumb"
-      />
-    </SwitchPrimitive.Root>
+      <span className="relative isolate inline-flex h-6 w-10 items-center rounded-full border-1 border-gray-400 bg-gray-100 outline-0 outline-transparent outline-offset-2 transition-colors group-focus-visible:z-10 group-focus-visible:outline-3 group-focus-visible:outline-gray-1000 group-selected:border-blue-400 group-selected:bg-blue-700">
+        <span className="relative size-5 translate-x-[1px] rounded-full bg-gray-1000 transition duration-150 ease-in-out group-selected:translate-x-[17px]" />
+      </span>
+    </SwitchPrimitive>
   );
 }
