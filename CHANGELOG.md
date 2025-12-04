@@ -1,3 +1,14 @@
+# [1.3.0](https://github.com/wahyusaputropratjojo/personal/compare/v1.2.0...v1.3.0) (2025-12-04)
+
+
+### Features
+
+* **component:** create navigation component ([88ea46d](https://github.com/wahyusaputropratjojo/personal/commit/88ea46d85ec0c3354270c82e5336ac46dc68f902))
+* **layout:** apply theme provider by next-themes ([9c5ad8e](https://github.com/wahyusaputropratjojo/personal/commit/9c5ad8e5205e52fff7acc0bf8bfb2c8ecdd6b18f))
+* **style:** add colors variables ([09dcde2](https://github.com/wahyusaputropratjojo/personal/commit/09dcde28823101728c3a6e5b8d9f4a4bda4320e1))
+* **style:** update main style ([92e1245](https://github.com/wahyusaputropratjojo/personal/commit/92e1245c8cb8913df359ce58f8209579a88dd83e))
+* **style:** update typography variables ([fd8108e](https://github.com/wahyusaputropratjojo/personal/commit/fd8108e915eb6257d89039be0e258a643a3bb57d))
+
 # [1.2.0](https://github.com/wahyusaputropratjojo/personal/compare/v1.1.0...v1.2.0) (2025-10-28)
 
 
