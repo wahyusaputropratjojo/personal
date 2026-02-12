@@ -1,0 +1,8 @@
+@import url("$lib/styles/color.css");
+@import url("$lib/styles/typography.css");
+@import url("$lib/styles/preflight.css");
+
+body {
+  color: var(--color-neutral-12);
+  background-color: var(--color-neutral-1);
+}
