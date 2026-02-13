@@ -39,7 +39,12 @@
     }
   },
   "linter": {
-    "enabled": true
+    "enabled": true,
+    "rules": {
+      "correctness": {
+        "noUnknownPseudoClass": "off"
+      }
+    }
   },
   "overrides": [
     {
