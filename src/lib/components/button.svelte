@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, type ButtonRootProps } from "bits-ui";
+  import { Button } from "bits-ui";
   import { cva, type VariantProps } from "class-variance-authority";
 
   const buttonVariants = cva("button", {
@@ -47,21 +47,24 @@
     },
   });
 
-  type ButtonProps = ButtonRootProps & VariantProps<typeof buttonVariants>;
+  type ButtonProps = Button.RootProps & VariantProps<typeof buttonVariants>;
 
   let { intent, iconOnly, fullWidth, size, status, ...props }: ButtonProps =
     $props();
 </script>
 
 <Button.Root
-  class={buttonVariants({
-    intent,
-    iconOnly,
-    fullWidth,
-    size,
-    status,
-  })}
   {...props}
+  class={[
+    buttonVariants({
+      intent,
+      iconOnly,
+      fullWidth,
+      size,
+      status,
+    }),
+    props.class,
+  ]}
 />
 
 <style>
