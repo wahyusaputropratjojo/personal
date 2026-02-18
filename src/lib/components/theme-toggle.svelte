@@ -15,9 +15,11 @@
       setMode(newTheme);
     });
   }
+
+  let props = $props();
 </script>
 
-<Button size="small" intent="secondary" onclick={toggleMode}>
+<Button {...props} size="small" intent="secondary" onclick={toggleMode}>
   {#if mode.current === "light"}
     <SunIcon />
   {:else}
