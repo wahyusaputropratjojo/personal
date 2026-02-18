@@ -9,6 +9,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.3.15",
     "@sveltejs/adapter-auto": "^7.0.0",
+    "@sveltejs/enhanced-img": "^0.10.2",
     "@sveltejs/kit": "^2.50.2",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
     "runed": "^0.37.1",
