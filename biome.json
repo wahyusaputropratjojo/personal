@@ -3,8 +3,10 @@
   "assist": {
     "actions": {
       "source": {
+        "noDuplicateClasses": "on",
         "organizeImports": "on",
         "useSortedAttributes": "on",
+        "useSortedInterfaceMembers": "on",
         "useSortedKeys": "on",
         "useSortedProperties": "on"
       }
@@ -30,6 +32,8 @@
   "html": {
     "experimentalFullSupportEnabled": true,
     "formatter": {
+      "attributePosition": "multiline",
+      "enabled": true,
       "indentScriptAndStyle": true
     }
   },
@@ -38,33 +42,6 @@
       "enabled": true
     }
   },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "correctness": {
-        "noUnknownPseudoClass": "off"
-      }
-    }
-  },
-  "overrides": [
-    {
-      "includes": [
-        "**/*.svelte"
-      ],
-      "linter": {
-        "rules": {
-          "correctness": {
-            "noUnusedImports": "off",
-            "noUnusedVariables": "off"
-          },
-          "style": {
-            "useConst": "off",
-            "useImportType": "off"
-          }
-        }
-      }
-    }
-  ],
   "vcs": {
     "clientKind": "git",
     "enabled": true,
