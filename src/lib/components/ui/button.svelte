@@ -1,8 +1,7 @@
-<script lang="ts">
-  import { Button } from "bits-ui";
+<script lang="ts" module>
   import { cva, type VariantProps } from "class-variance-authority";
 
-  const buttonVariants = cva("button", {
+  export const buttonVariants = cva("button", {
     compoundVariants: [
       {
         className: "button--primary-danger",
@@ -47,55 +46,68 @@
     },
   });
 
-  type ButtonProps = Button.RootProps & VariantProps<typeof buttonVariants>;
+  export type ButtonProps = Button.RootProps &
+    VariantProps<typeof buttonVariants>;
+</script>
 
-  let { intent, iconOnly, fullWidth, size, status, ...props }: ButtonProps =
-    $props();
+<script lang="ts">
+  import { Button } from "bits-ui";
+
+  let {
+    ref = $bindable(null),
+    intent,
+    iconOnly,
+    fullWidth,
+    size,
+    status,
+    class: className,
+    ...props
+  }: ButtonProps = $props();
 </script>
 
 <Button.Root
+  bind:ref
+  class={buttonVariants({
+    intent,
+    iconOnly,
+    fullWidth,
+    size,
+    status,
+    className,
+  })}
   {...props}
-  class={[
-    buttonVariants({
-      intent,
-      iconOnly,
-      fullWidth,
-      size,
-      status,
-    }),
-    props.class,
-  ]}
 />
 
 <style>
   :global {
     .button {
-      position: relative;
       display: inline flex;
+      position: relative;
       column-gap: var(--button-column-gap);
-      align-items: center;
       justify-content: center;
-      padding-block: var(--button-padding-block);
+      align-items: center;
+      transition-duration: 150ms;
+      transition-property:
+        color, background-color, border-color, outline-color,
+        text-decoration-color;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      outline: transparent;
+      border-radius: calc(infinity * 1px);
+      isolation: isolate;
       padding-inline: var(--button-padding-inline);
+      padding-block: var(--button-padding-block);
       overflow: hidden;
       font-weight: 500;
       line-height: 1;
       letter-spacing: normal;
-      cursor: pointer;
       user-select: none;
-      outline: transparent;
-      border-radius: calc(infinity * 1px);
-      isolation: isolate;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
-      transition-property: color, background-color, border-color, outline-color,
-        text-decoration-color;
 
       &:focus-visible {
         z-index: 10;
-        outline-width: 3px;
-        outline-style: solid;
         outline-color: var(--color-primary-8);
+        outline-style: solid;
+        outline-width: 3px;
         outline-offset: 1px;
       }
 
@@ -107,8 +119,8 @@
     }
 
     .button--primary {
-      color: var(--color-light);
       background-color: var(--color-primary-9);
+      color: var(--color-light);
 
       &:active {
         background-color: var(--color-primary-11);
@@ -120,8 +132,8 @@
     }
 
     .button--primary-danger {
-      color: var(--color-light);
       background-color: var(--color-danger-9);
+      color: var(--color-light);
 
       &:active {
         background-color: var(--color-danger-11);
@@ -133,8 +145,8 @@
     }
 
     .button--secondary {
-      color: var(--color-neutral-12);
       background-color: var(--color-neutral-3);
+      color: var(--color-neutral-12);
 
       &:active {
         background-color: var(--color-neutral-5);
@@ -146,13 +158,13 @@
     }
 
     .button--secondary-danger {
-      color: var(--color-danger-9);
       background-color: var(--color-neutral-3);
+      color: var(--color-danger-9);
     }
 
     .button--tertiary {
-      color: var(--color-neutral-12);
       background-color: transparent;
+      color: var(--color-neutral-12);
 
       &:active {
         background-color: var(--color-neutral-5);
@@ -168,8 +180,8 @@
     }
 
     .button--icon-only {
-      aspect-ratio: 1 / 1;
       padding: var(--button-padding-block);
+      aspect-ratio: 1 / 1;
     }
 
     .button--full-width {
