@@ -4,7 +4,6 @@
   import GitHubIcon from "$lib/components/icons/github.svelte";
   import InstagramIcon from "$lib/components/icons/instagram.svelte";
   import LinkedInIcon from "$lib/components/icons/linkedin.svelte";
-  import { resolve } from "$app/paths";
 
   const contacts = [
     {
@@ -63,16 +62,22 @@
           {#each items as { id, href, icon: Icon, title } (id)}
             <li>
               <p>{title}</p>
-              <Button intent="secondary" size="small">
-                <a
-                  href={resolve(href)}
-                  rel="noopener noreferrer"
-                  target="_blank"
+              <a
+                {href}
+                rel="external"
+                target="_blank"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <Button
+                  intent="secondary"
+                  size="small"
+                  aria-label="Connect to {title}"
                 >
-                  Connect To
-                </a>
-                <Icon />
-              </Button>
+                  Connect to
+                  <Icon />
+                </Button>
+              </a>
             </li>
           {/each}
         </ul>
