@@ -19,8 +19,9 @@
   :global {
     .navigation-menu__list {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      gap: 0.25rem;
       padding: 0.25rem;
     }
   }

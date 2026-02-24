@@ -2,14 +2,12 @@
   import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
   import { NavigationMenu } from "bits-ui";
 
-  interface Props extends NavigationMenu.TriggerProps {}
-
   let {
     ref = $bindable(null),
     class: className,
     children,
     ...props
-  }: Props = $props();
+  }: NavigationMenu.TriggerProps = $props();
 </script>
 
 <NavigationMenu.Trigger
@@ -26,32 +24,32 @@
   :global {
     .navigation-menu__trigger {
       display: inline-flex;
-      gap: 0.25rem;
-      align-items: center;
       justify-content: center;
-      width: max-content;
-      min-height: 2rem;
-      padding: 0.2rem 0.5rem;
-      font-size: var(--label-medium);
-      font-weight: var(--weight-medium);
-      line-height: var(--leading-normal);
-      color: var(--color-neutral-11);
-      letter-spacing: var(--tracking-normal);
-      text-decoration: none;
+      align-items: center;
+      gap: 0.25rem;
+      transition: color;
+      transition-duration: 150ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       cursor: pointer;
-      user-select: none;
       outline-color: transparent;
       border-radius: calc(infinity * 1px);
-      transition: color;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+      padding: 0.2rem 0.5rem;
+      width: max-content;
+      min-height: 2rem;
+      color: var(--color-neutral-11);
+      font-weight: var(--weight-medium);
+      font-size: var(--label-medium);
+      line-height: var(--leading-normal);
+      letter-spacing: var(--tracking-normal);
+      user-select: none;
+      text-decoration: none;
 
       svg {
-        width: 1em;
-        height: 1em;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms;
         transition-property: rotate;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        width: 1em;
+        height: 1em;
       }
 
       &[data-state="open"] {
@@ -61,27 +59,27 @@
       }
 
       &:disabled {
-        pointer-events: none;
         opacity: 50%;
+        pointer-events: none;
       }
 
       &:hover {
-        color: var(--color-neutral-12);
         background-color: var(--color-neutral-4);
+        color: var(--color-neutral-12);
       }
 
       &:focus-visible {
-        color: var(--color-neutral-12);
-        outline-width: 3px;
-        outline-style: solid;
         outline-color: var(--color-primary-8);
+        outline-style: solid;
+        outline-width: 3px;
         outline-offset: 1px;
         background-color: var(--color-neutral-4);
+        color: var(--color-neutral-12);
       }
 
       &[data-active] {
-        color: var(--color-primary-12);
         background-color: var(--color-primary-5);
+        color: var(--color-primary-12);
       }
     }
   }

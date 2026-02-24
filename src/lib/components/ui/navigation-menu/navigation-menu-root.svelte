@@ -15,7 +15,7 @@
   bind:ref
   {...props}
 >
-  {@render children()}
+  {@render children?.()}
   <NavigationMenu.Viewport
     class="navigation-menu__viewport"
     data-slot="navigation-menu-viewport"
@@ -26,27 +26,27 @@
 <style>
   :global {
     .navigation-menu {
-      position: relative;
-      z-index: 10;
       display: flex;
+      position: relative;
       justify-content: center;
+      z-index: 10;
       width: 100%;
     }
 
     .navigation-menu__viewport {
       position: absolute;
       top: 100%;
-      width: 100%;
-      width: var(--bits-navigation-menu-viewport-width);
-      height: var(--bits-navigation-menu-viewport-height);
-      margin-top: 0.5rem;
-      overflow: hidden;
-      background-color: var(--color-neutral-2);
-      border-radius: 1rem;
       transition:
         width,
         height,
         250ms ease;
+      margin-top: 0.5rem;
+      border-radius: 1rem;
+      background-color: var(--color-neutral-2);
+      width: 100%;
+      width: var(--bits-navigation-menu-viewport-width);
+      height: var(--bits-navigation-menu-viewport-height);
+      overflow: hidden;
     }
   }
 </style>

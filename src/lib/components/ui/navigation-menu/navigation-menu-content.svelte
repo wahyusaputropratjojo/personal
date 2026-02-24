@@ -21,11 +21,11 @@
       position: absolute;
       top: 0;
       left: 0;
-      color: var(--color-neutral-12);
-      background-color: var(--color-neutral-2);
-      border-radius: 1rem;
       animation-duration: 250ms;
       animation-timing-function: ease;
+      border-radius: 1rem;
+      background-color: var(--color-neutral-2);
+      color: var(--color-neutral-12);
 
       @media (width >= 40rem) {
         width: auto;
@@ -50,45 +50,45 @@
 
     @keyframes enter-from-right {
       from {
-        opacity: 0;
         transform: translateX(200px);
+        opacity: 0;
       }
       to {
-        opacity: 1;
         transform: translateX(0);
+        opacity: 1;
       }
     }
 
     @keyframes enter-from-left {
       from {
-        opacity: 0;
         transform: translateX(-200px);
+        opacity: 0;
       }
       to {
-        opacity: 1;
         transform: translateX(0);
+        opacity: 1;
       }
     }
 
     @keyframes exit-to-right {
       from {
-        opacity: 1;
         transform: translateX(0);
+        opacity: 1;
       }
       to {
-        opacity: 0;
         transform: translateX(200px);
+        opacity: 0;
       }
     }
 
     @keyframes exit-to-left {
       from {
-        opacity: 1;
         transform: translateX(0);
+        opacity: 1;
       }
       to {
-        opacity: 0;
         transform: translateX(-200px);
+        opacity: 0;
       }
     }
   }
