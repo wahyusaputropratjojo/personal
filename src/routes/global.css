@@ -5,18 +5,18 @@
 @import url("$lib/styles/preflight.css") layer(base);
 
 @font-face {
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("/assets/fonts/geist-sans.woff2") format("woff2");
   font-family: "Geist", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 100 900;
-  font-style: normal;
-  src: url("/assets/fonts/geist-sans.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "Geist", sans-serif;
-  font-weight: 100 900;
   font-style: italic;
+  font-weight: 100 900;
   src: url("/assets/fonts/geist-sans-italic.woff2") format("woff2");
+  font-family: "Geist", sans-serif;
 }
 
 @layer base {
@@ -26,16 +26,16 @@
   }
 
   html {
-    font-family: var(--font-geist-sans);
-    color: var(--color-neutral-12);
     background-color: var(--color-neutral-1);
-    scrollbar-gutter: stable;
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+    color: var(--color-neutral-12);
+    font-family: var(--font-geist-sans);
     text-rendering: optimizeLegibility;
 
     ::selection {
-      color: var(--color-neutral-1);
       background-color: var(--color-neutral-12);
+      color: var(--color-neutral-1);
     }
   }
 }

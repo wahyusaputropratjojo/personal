@@ -13,34 +13,34 @@
 
 <style>
   header {
+    display: grid;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 10;
-    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: center;
     justify-content: center;
+    align-items: center;
     justify-items: center;
+    z-index: 10;
+    background-color: transparent;
+    padding-inline: 1rem;
     width: 100%;
     height: var(--header-height);
-    padding-inline: 1rem;
-    background-color: transparent;
 
     @media (width >= 48rem) {
       position: sticky;
       top: 0;
-      z-index: 10;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      height: var(--header-height);
-      background-color: var(--color-neutral-1);
-      border-color: var(--color-neutral-6);
+      z-index: 10;
       border-bottom-width: 1px;
+      border-color: var(--color-neutral-6);
+      background-color: var(--color-neutral-1);
+      height: var(--header-height);
     }
 
     p {
-      font-size: var(--body-medium);
       font-weight: 600;
+      font-size: var(--body-medium);
       line-height: 1;
       letter-spacing: -0.05em;
     }

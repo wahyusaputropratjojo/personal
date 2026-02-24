@@ -23,9 +23,9 @@
       position: fixed;
       bottom: 0;
       z-index: 100;
-      padding-block: 1rem;
-      padding-inline: 1rem;
       background: linear-gradient(to top, var(--color-neutral-1), transparent);
+      padding-inline: 1rem;
+      padding-block: 1rem;
 
       @media (width >= 48rem) {
         display: none;

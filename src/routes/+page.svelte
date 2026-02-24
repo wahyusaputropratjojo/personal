@@ -32,26 +32,26 @@
     padding-bottom: 8rem;
 
     @media (width >= 48rem) {
+      grid-template-columns: 1fr 1fr;
       grid-template-areas:
         "introduction title"
         "content content";
-      grid-template-columns: 1fr 1fr;
       gap: unset;
       row-gap: 2rem;
       padding-bottom: unset;
     }
 
     @media (width >= 80rem) {
-      grid-template-areas: "introduction content title";
       grid-template-columns: 1fr 2fr 1fr;
+      grid-template-areas: "introduction content title";
       gap: unset;
     }
   }
 
   .title-section {
     display: flex;
-    flex-direction: column;
     grid-area: title;
+    flex-direction: column;
     gap: 1rem;
 
     @media (width >= 48rem) {
@@ -62,18 +62,18 @@
     @media (width >= 80rem) {
       position: sticky;
       top: var(--header-height);
-      height: calc(100vh - var(--header-height));
-      padding-block: 3rem;
       padding-inline: 1rem;
+      padding-block: 3rem;
+      height: calc(100vh - var(--header-height));
     }
 
     h1 {
       display: none;
       padding-inline: 1rem;
-      font-size: var(--display-medium);
-      font-weight: 600;
-      line-height: 1;
       color: var(--color-neutral-12);
+      font-weight: 600;
+      font-size: var(--display-medium);
+      line-height: 1;
       letter-spacing: -0.05em;
 
       @media (width >= 48rem) {
@@ -85,8 +85,8 @@
 
   .introduction-section {
     display: flex;
-    flex-direction: column;
     grid-area: introduction;
+    flex-direction: column;
     gap: 2.5rem;
     padding-inline: 1rem;
 
@@ -98,16 +98,16 @@
     @media (width >= 80rem) {
       position: sticky;
       top: var(--header-height);
-      height: calc(100vh - var(--header-height));
-      padding-block: 3rem;
       padding-inline: 1rem;
+      padding-block: 3rem;
+      height: calc(100vh - var(--header-height));
     }
 
     p {
-      font-size: var(--body-large);
-      font-weight: 400;
-      line-height: 1.5;
       color: var(--color-neutral-12);
+      font-weight: 400;
+      font-size: var(--body-large);
+      line-height: 1.5;
       letter-spacing: normal;
       text-wrap: pretty;
     }
@@ -115,17 +115,17 @@
 
   .content-section {
     display: flex;
-    flex-direction: column;
     grid-area: content;
+    flex-direction: column;
     gap: 1.5rem;
     padding-inline: 1rem;
 
     @media (width >= 80rem) {
-      padding-block: 3rem;
-      padding-inline: 1rem;
       border-color: var(--color-neutral-6);
-      border-inline-style: solid;
       border-inline-width: 1px;
+      border-inline-style: solid;
+      padding-inline: 1rem;
+      padding-block: 3rem;
     }
   }
 </style>
