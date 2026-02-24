@@ -1,8 +1,16 @@
 <script lang="ts">
+  import type { Pathname } from "$app/types";
+  import { resolve } from "$app/paths";
   import * as NavigationMenu from "$lib/components/ui/navigation-menu";
   import { page } from "$app/state";
 
-  const routes = [
+  type Routes = {
+    id: string;
+    href: Pathname;
+    title: string;
+  };
+
+  const routes: Routes[] = [
     {
       id: "aa47feff-1eb6-4ce7-b681-050000e97d3a",
       href: "/",
@@ -27,7 +35,10 @@
   <NavigationMenu.List>
     {#each routes as { id, href, title } (id)}
       <NavigationMenu.Item>
-        <NavigationMenu.Link active={page.url.pathname === href} {href}>
+        <NavigationMenu.Link
+          active={page.url.pathname === href}
+          href={resolve(href)}
+        >
           {title}
         </NavigationMenu.Link>
       </NavigationMenu.Item>
