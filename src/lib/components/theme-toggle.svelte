@@ -1,7 +1,7 @@
 <script lang="ts">
   import { MoonIcon, SunIcon } from "@lucide/svelte";
   import { mode, setMode } from "mode-watcher";
-  import Button from "$lib/components/button.svelte";
+  import Button from "$lib/components/ui/button.svelte";
 
   function toggleMode() {
     const newTheme = mode.current === "light" ? "dark" : "light";
