@@ -25,9 +25,11 @@
       outline-style: solid;
       outline-width: 3px;
       outline-offset: 1px;
-      border: 1px solid var(--color-neutral-6);
+      border-width: 1px;
+      border-style: solid;
+      border-color: var(--color-neutral-6, gray);
       border-radius: 0.5rem;
-      background-color: var(--color-neutral-2);
+      background-color: var(--color-neutral-1);
       padding-inline: 0.75rem;
       padding-block: 0.5rem;
       min-height: 7.5rem;
@@ -37,6 +39,15 @@
 
       &:focus-visible {
         outline-color: var(--color-primary-8);
+
+        &[aria-invalid="true"] {
+          outline-color: var(--color-danger-8);
+        }
+      }
+
+      &[aria-invalid="true"] {
+        border-color: var(--color-danger-6);
+        background-color: var(--color-danger-1);
       }
     }
   }
