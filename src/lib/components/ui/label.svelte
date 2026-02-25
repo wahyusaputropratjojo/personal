@@ -33,21 +33,22 @@
 <style>
   :global {
     .label {
+      color: var(--color-neutral-12);
       font-weight: 500;
       line-height: 1.375;
       letter-spacing: normal;
     }
 
     .label--large {
-      font-size: var(--label-large);
+      font-size: var(--label-large, 1rem);
     }
 
     .label--medium {
-      font-size: var(--label-medium);
+      font-size: var(--label-medium, 0.875rem);
     }
 
     .label--small {
-      font-size: var(--label-small);
+      font-size: var(--label-small, 0.75rem);
     }
   }
 </style>
