@@ -1,6 +1,6 @@
 import { betterAuth } from "better-auth";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
-import { client } from "$lib/server/db";
+import { client } from "$lib/server/database";
 import { BETTER_AUTH_URL } from "$env/static/private";
 
 export const auth = betterAuth({
