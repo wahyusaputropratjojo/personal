@@ -4,6 +4,7 @@
   import GitHubIcon from "$lib/components/icons/github.svelte";
   import InstagramIcon from "$lib/components/icons/instagram.svelte";
   import LinkedInIcon from "$lib/components/icons/linkedin.svelte";
+  import MessageForm from "$lib/components/forms/message-form.svelte";
 
   const contacts = [
     {
@@ -85,7 +86,9 @@
     {/each}
   </section>
 
-  <section class="content-section"></section>
+  <section class="content-section">
+    <MessageForm />
+  </section>
 </main>
 
 <style>
