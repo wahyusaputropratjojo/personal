@@ -24,3 +24,4 @@ if (import.meta.env.DEV) {
 }
 
 export const client = instanceMongoClient;
+export const db = client.db();
