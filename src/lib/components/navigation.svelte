@@ -26,6 +26,11 @@
       href: "/contact",
       title: "Contact",
     },
+    {
+      id: "8fb67792-5d75-4a6c-9ff6-8f19d40ececa",
+      href: "/inbox",
+      title: "Inbox",
+    },
   ];
 
   let props = $props();

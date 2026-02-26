@@ -1,7 +1,12 @@
 <script lang="ts">
   import type { Pathname } from "$app/types";
   import type { Component } from "svelte";
-  import { HouseIcon, MessageCircleIcon, UserRoundIcon } from "@lucide/svelte";
+  import {
+    HouseIcon,
+    MessageCircleIcon,
+    UserRoundIcon,
+    MailIcon,
+  } from "@lucide/svelte";
   import { Tabs } from "bits-ui";
   import { goto } from "$app/navigation";
   import { page } from "$app/state";
@@ -32,6 +37,12 @@
       href: "/contact",
       icon: UserRoundIcon,
       title: "Contact",
+    },
+    {
+      id: "",
+      href: "/inbox",
+      icon: MailIcon,
+      title: "Inbox",
     },
   ];
 
