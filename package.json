@@ -12,6 +12,7 @@
     "@sveltejs/kit": "^2.50.2",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
     "@types/node": "^25.3.0",
+    "@vitest/ui": "4.0.18",
     "bits-ui": "^2.15.5",
     "class-variance-authority": "^0.7.1",
     "eslint": "^9.39.2",
